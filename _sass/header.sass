@@ -1,0 +1,92 @@
+@mixin ease-in-out-transition($transition_time)
+  transition: all $transition_time ease-in-out
+  -webkit-transition: all $transition_time ease-in-out
+  -moz-transition: all $transition_time ease-in-out
+  -o-transition: all $transition_time ease-in-out
+
+
+#header
+  height: 100vh
+
+  .image
+    height: 100%
+    background:
+      image: url("../images/balloon-header.png")
+      position: center center
+      repeat: no-repeat
+      //size: 100%
+
+    .information
+      i
+
+    .gray_box
+      position: relative
+      width: 40%
+      //max-width: x
+      height: 250px
+      background-color: rgba(240, 235, 235, 0.4)
+      border-radius: 10px
+      margin: auto auto
+      padding: 30px 20px 20px 20px
+      top: 20%
+      transform: translateY(-20%)
+
+      .heading, .question
+        color: white
+
+      .heading
+        text-align: center
+        margin: 0px
+
+      .seperator
+        width: 25%
+        margin: 0 auto
+        border: none
+        height: 5px
+        background-color: white
+
+
+
+      .input-section
+        margin-top: 60px
+        width: 400px
+        position: relative
+        left: 50%
+        transform: translate(-50%)
+
+        .question
+          margin: 0px 0px 5px 0px
+
+        .input-name
+          height: 50px
+          background-color: #EBE9E9
+          width: 100%
+          font-size: 20px
+          color: #949494
+          border: 2px solid #D9D4D4
+          outline: none
+          @include ease-in-out-transition(0.3s)
+          padding: 0px 5px
+
+          &:focus
+            background-color: white
+
+
+    .start-btn
+      position: absolute
+      border: 2px solid white
+      color: white
+      background-color: transparent
+      border-radius: 100px
+      padding: 15px
+      font-size: 16px
+      cursor: pointer
+      bottom: 100px
+      left: 50%
+      transform: translate(-50%)
+      outline: none
+      @include ease-in-out-transition(0.3s)
+
+      &:hover
+        background-color: white
+        color: black
