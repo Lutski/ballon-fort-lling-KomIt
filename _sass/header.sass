@@ -17,7 +17,16 @@
       //size: 100%
 
     .information
-      i
+      float: right
+      margin-right: 15px
+      margin-top: 10px
+
+      .question-circle-link .fa-question-circle
+        color: white
+        @include ease-in-out-transition(0.3s)
+
+        &:hover
+          color: darken(white, 10%)
 
     .gray_box
       position: relative
@@ -28,8 +37,8 @@
       border-radius: 10px
       margin: auto auto
       padding: 30px 20px 20px 20px
-      top: 20%
-      transform: translateY(-20%)
+      top: 25%
+      transform: translateY(-25%)
 
       .heading, .question
         color: white
