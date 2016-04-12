@@ -1,5 +1,6 @@
 $(document).ready(function() {
   makeVideoFixed();
+  togglePopup();
 });
 
 function makeVideoFixed() {
@@ -18,5 +19,15 @@ function makeVideoFixed() {
       });
     }
 
+  });
+}
+
+function togglePopup() {
+  $('.question-circle-link').click(function() {
+    $("#question-popup").toggleClass("is-visable");
+  });
+
+  $('.dismiss-popup').click(function() {
+    $("#question-popup").toggleClass("is-visable");
   });
 }
