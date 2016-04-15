@@ -17,8 +17,7 @@ function makeVideoFixed() {
       $("#introduction .container video").css({
         "position" : "relative"
       });
-    }
-
+    } 
   });
 }
 

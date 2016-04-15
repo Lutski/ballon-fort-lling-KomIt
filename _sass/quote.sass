@@ -1,0 +1,51 @@
+#quote-section
+  .image
+    position: relative
+    width: 100%
+    height: 100vh
+    z-index: 2
+    overflow: hidden
+    background:
+      image: url("../images/quote-image.png")
+      position: center center
+      repeat: no-repeat
+      size: cover
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+
+
+    .quote-content
+      position: relative
+      text-align: center
+      max-width: 600px
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      margin-top: -50px
+
+      .quote-svg
+        height: 300px
+        position: absolute
+        margin-top: -100px
+        left: 50%
+        transform: translate(-50%)
+        z-index: 0
+
+
+
+      .quote, .quote-author
+        color: white
+        z-index: 1
+        position: relative
+
+      .quote
+        font:
+          weight: 200
+          size: 35px
+
+
+      .quote-author
+        font:
+          weight: 900
+          size: 18px
