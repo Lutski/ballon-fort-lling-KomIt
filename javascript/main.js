@@ -1,6 +1,7 @@
 $(document).ready(function() {
   makeVideoFixed();
   togglePopup();
+  makeHistoryTextFixed();
 });
 
 function makeVideoFixed() {
@@ -17,7 +18,7 @@ function makeVideoFixed() {
       $("#introduction .container video").css({
         "position" : "relative"
       });
-    } 
+    }
   });
 }
 
@@ -28,5 +29,22 @@ function togglePopup() {
 
   $('.dismiss-popup').click(function() {
     $("#question-popup").toggleClass("is-visable");
+  });
+}
+
+function makeHistoryTextFixed() {
+  $(window).scroll(function() {
+
+    fixedPositionStart = $(".home .everything-before-history").height();
+    windowScroll = $(window).scrollTop();
+
+    if (windowScroll >= fixedPositionStart) {
+      $("#history-section .text-content").addClass("fixed-text");
+    } else if (windowScroll <= fixedPositionStart) {
+      $("#history-section .text-content").removeClass("fixed-text");
+    }
+
+    console.log(windowScroll);
+
   });
 }
