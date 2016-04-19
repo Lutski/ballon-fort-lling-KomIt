@@ -1,8 +1,16 @@
 $(document).ready(function() {
+  getNameInput();
   makeVideoFixed();
   togglePopup();
   makeHistoryTextFixed();
 });
+
+function getNameInput() {
+  $('.input-name').on('keyup', function() {
+    var user_input_name = $(".input-name").val();
+    $('.user_name').html(user_input_name);
+  });
+}
 
 function makeVideoFixed() {
   $(window).scroll(function() {
