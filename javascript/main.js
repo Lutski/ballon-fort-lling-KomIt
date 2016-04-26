@@ -46,7 +46,10 @@ function startStory() {
 }
 
 function scrollDown() {
-
+  headerHeight = $("#header").height();
+  $('html, body').animate({
+    scrollTop: headerHeight
+  }, 'slow');
 }
 
 function nameError(errorNumber) {
