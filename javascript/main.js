@@ -26,13 +26,22 @@ function enableScrolling() {
 }
 
 function startStory() {
+  var buttonClickCount = 0
+
   $(".start-btn").click(function() {
     if (!$(".input-name").val()) {
-      nameError();
+      if (buttonClickCount == 0) {
+        firstError();
+      } else if (buttonClickCount >= 10){
+        lastError();
+      } else {
+        nameError();
+      }
     } else {
       enableScrolling();
       scrollDown();
     }
+    buttonClickCount += 1
   });
 }
 
@@ -41,7 +50,29 @@ function scrollDown() {
 }
 
 function nameError() {
-  console.log("ERROR!")
+  var errorArray = ["SKRIV DIT NAVN G!", "VIL DU SLÅS? SKRIV DET NAVN", "JEG KALDER PÅ MINE SHABABS! SKRIV DET NAVN!", "WALLAH, JEG GIVER DIG EN SEKUND TIL AT SKRIVE DIT NAVN", "PAS PÅ G, JEG HAR DRENGE PÅ GADEN! SKRIV DET NAVN", "DU VED IKKE HVAD JEG ER I STAND TIL! SKRIV NAVNET", "JEG LEGER IKKE... SKRIV DIT NAVN"];
+  //var errorArray = ["Vær venlig at skrive dit navn :)", "Skriv dit navn for at gå igang!"]
+  var randomNumber = Math.floor((Math.random() * errorArray.length) + 1);
+  $(".error-message h1").html(errorArray[randomNumber]);
+  $(".error-message").fadeIn(500);
+  $(".error-message").delay(1000);
+  $(".error-message").fadeOut(500);
+}
+
+function firstError() {
+  $(".error-message h1").html("Vær venlig at skrive dit navn :)");
+  $(".error-message").fadeIn(500);
+  $(".error-message").delay(1000);
+  $(".error-message").fadeOut(500);
+}
+
+function lastError() {
+  $(".error-message h1").html("RESPEKT... SINDSYG UUDHOLDENHED, BARE KOM!");
+  $(".error-message").fadeIn(500);
+  $(".error-message").delay(1000);
+  $(".error-message").fadeOut(500);
+  enableScrolling();
+  scrollDown();
 }
 
 function getNameInput() {
