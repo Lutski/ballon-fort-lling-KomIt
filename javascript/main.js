@@ -32,10 +32,10 @@ function startStory() {
     if (!$(".input-name").val()) {
       if (buttonClickCount == 0) {
         firstError();
-      } else if (buttonClickCount >= 10){
+      } else if (buttonClickCount >= 6){
         lastError();
       } else {
-        nameError();
+        nameError(buttonClickCount);
       }
     } else {
       enableScrolling();
@@ -49,27 +49,28 @@ function scrollDown() {
 
 }
 
-function nameError() {
+function nameError(errorNumber) {
   var errorArray = ["SKRIV DIT NAVN G!", "VIL DU SLÅS? SKRIV DET NAVN", "JEG KALDER PÅ MINE SHABABS! SKRIV DET NAVN!", "WALLAH, JEG GIVER DIG EN SEKUND TIL AT SKRIVE DIT NAVN", "PAS PÅ G, JEG HAR DRENGE PÅ GADEN! SKRIV DET NAVN", "DU VED IKKE HVAD JEG ER I STAND TIL! SKRIV NAVNET", "JEG LEGER IKKE... SKRIV DIT NAVN"];
   //var errorArray = ["Vær venlig at skrive dit navn :)", "Skriv dit navn for at gå igang!"]
-  var randomNumber = Math.floor((Math.random() * errorArray.length) + 1);
-  $(".error-message h1").html(errorArray[randomNumber]);
+  //var randomNumber = Math.floor((Math.random() * errorArray.length) + 1);
+  $(".error-message h1").html(errorArray[errorNumber]);
   $(".error-message").fadeIn(500);
-  $(".error-message").delay(1000);
+  $(".error-message").delay(1500);
   $(".error-message").fadeOut(500);
 }
 
 function firstError() {
   $(".error-message h1").html("Vær venlig at skrive dit navn :)");
   $(".error-message").fadeIn(500);
-  $(".error-message").delay(1000);
+  $(".error-message").delay(1500);
   $(".error-message").fadeOut(500);
 }
 
 function lastError() {
   $(".error-message h1").html("RESPEKT... SINDSYG UUDHOLDENHED, BARE KOM!");
+  $(".error-message").css({"background" : "lightgreen"});
   $(".error-message").fadeIn(500);
-  $(".error-message").delay(1000);
+  $(".error-message").delay(1500);
   $(".error-message").fadeOut(500);
   enableScrolling();
   scrollDown();
