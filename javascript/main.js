@@ -1,9 +1,48 @@
 $(document).ready(function() {
+  disableScrolling();
   getNameInput();
+  startStory();
   makeVideoFixed();
   togglePopup();
   makeHistoryTextFixed();
 });
+
+// Disables scrolling when its called
+function disableScrolling() {
+// Page jumps to top when its disabled and reanabled
+ $('html, body').css({
+     'overflow': 'hidden',
+     'height': '100%'
+ });
+}
+
+// Enables scrolling when its called
+function enableScrolling() {
+// Page jumps to top when its disabled and reanabled
+ $('html, body').css({
+     'overflow': 'auto',
+     'height': 'auto'
+ });
+}
+
+function startStory() {
+  $(".start-btn").click(function() {
+    if (!$(".input-name").val()) {
+      nameError();
+    } else {
+      enableScrolling();
+      scrollDown();
+    }
+  });
+}
+
+function scrollDown() {
+
+}
+
+function nameError() {
+  console.log("ERROR!")
+}
 
 function getNameInput() {
   $('.input-name').on('keyup', function() {
