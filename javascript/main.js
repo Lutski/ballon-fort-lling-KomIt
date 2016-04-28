@@ -32,7 +32,7 @@ function startStory() {
     if (!$(".input-name").val()) {
       if (buttonClickCount == 0) {
         firstError();
-      } else if (buttonClickCount >= 6){
+      } else if (buttonClickCount >= 1){
         lastError();
       } else {
         nameError(buttonClickCount);
@@ -71,7 +71,7 @@ function firstError() {
 
 function lastError() {
   $(".error-message h1").html("RESPEKT... SINDSYG UUDHOLDENHED, BARE KOM!");
-  $(".error-message").css({"background" : "lightgreen"});
+  $(".error-message").css({"background" : "#84D270"});
   $(".error-message").fadeIn(500);
   $(".error-message").delay(1500);
   $(".error-message").fadeOut(500);
