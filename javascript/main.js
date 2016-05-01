@@ -32,7 +32,7 @@ function startStory() {
     if (!$(".input-name").val()) {
       if (buttonClickCount == 0) {
         firstError();
-      } else if (buttonClickCount >= 1){
+      } else if (buttonClickCount >= 6){
         lastError();
       } else {
         nameError(buttonClickCount);
