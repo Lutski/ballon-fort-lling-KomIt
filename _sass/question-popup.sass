@@ -41,20 +41,23 @@
       margin: 0 auto
 
     button
+      $btn-color: #dddfe6
       position: absolute
       bottom: 30px
       left: 50%
       transform: translate(-50%)
       border: none
-      background: hotpink
+      background: $btn-color
       padding: 10px 20px 10px 20px
-      border-radius: 3px
+      border-radius: 100px
       cursor: pointer
       outline: none
+      color: white
+      font-size: 18px
       @include ease-in-out-transition(0.3s)
 
       &:hover
-        background: darken(hotpink, 20%)
+        background: darken($btn-color, 20%)
 
 
 @media(max-width: 700px)
