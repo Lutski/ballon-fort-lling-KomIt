@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // Functions I call when the page initially loads
   disableScrolling();
   getNameInput();
   startStory();
@@ -25,6 +26,7 @@ function enableScrolling() {
  });
 }
 
+// Controls which error messages get sent
 function startStory() {
   var buttonClickCount = 0
 
@@ -45,6 +47,7 @@ function startStory() {
   });
 }
 
+// Scrolls down below the header
 function scrollDown() {
   headerHeight = $("#header").height();
   $('html, body').animate({
@@ -52,6 +55,7 @@ function scrollDown() {
   }, 'slow');
 }
 
+// All name error functions
 function nameError(errorNumber) {
   var errorArray = ["SKRIV DIT NAVN G!", "VIL DU SLÅS? SKRIV DET NAVN", "JEG KALDER PÅ MINE SHABABS! SKRIV DET NAVN!", "WALLAH, JEG GIVER DIG EN SEKUND TIL AT SKRIVE DIT NAVN", "PAS PÅ G, JEG HAR DRENGE PÅ GADEN! SKRIV DET NAVN", "DU VED IKKE HVAD JEG ER I STAND TIL! SKRIV NAVNET", "JEG LEGER IKKE... SKRIV DIT NAVN"];
   //var errorArray = ["Skriv dit navn når jeg siger det!", "Stop med at klikke på knappen uden at skrive dit navn... Det gør ondt!", "AVV! Skriv dog dit navn...", "Okay... Sidste chance ellers sagsøger jeg dig!"]
@@ -79,6 +83,7 @@ function lastError() {
   scrollDown();
 }
 
+// Gets the input from .input-name and instantly updates the .user_name classe's content
 function getNameInput() {
   $('.input-name').on('keyup', function() {
     var user_input_name = $(".input-name").val();
@@ -86,6 +91,7 @@ function getNameInput() {
   });
 }
 
+// This make the video background fixed
 function makeVideoFixed() {
   $(window).scroll(function() {
 
@@ -104,6 +110,7 @@ function makeVideoFixed() {
   });
 }
 
+// This toggles the question (About this page) popup
 function togglePopup() {
   $('.question-circle-link').click(function() {
     $("#question-popup").toggleClass("is-visable");
@@ -114,6 +121,7 @@ function togglePopup() {
   });
 }
 
+// This makes the history text fixed while the images scroll
 function makeHistoryTextFixed() {
   $(window).scroll(function() {
 
