@@ -54,7 +54,7 @@ function scrollDown() {
 
 function nameError(errorNumber) {
   var errorArray = ["SKRIV DIT NAVN G!", "VIL DU SLÅS? SKRIV DET NAVN", "JEG KALDER PÅ MINE SHABABS! SKRIV DET NAVN!", "WALLAH, JEG GIVER DIG EN SEKUND TIL AT SKRIVE DIT NAVN", "PAS PÅ G, JEG HAR DRENGE PÅ GADEN! SKRIV DET NAVN", "DU VED IKKE HVAD JEG ER I STAND TIL! SKRIV NAVNET", "JEG LEGER IKKE... SKRIV DIT NAVN"];
-  //var errorArray = ["Vær venlig at skrive dit navn :)", "Skriv dit navn for at gå igang!"]
+  //var errorArray = ["Skriv dit navn når jeg siger det!", "Stop med at klikke på knappen uden at skrive dit navn... Det gør ondt!", "AVV! Skriv dog dit navn...", "Okay... Sidste chance ellers sagsøger jeg dig!"]
   //var randomNumber = Math.floor((Math.random() * errorArray.length) + 1);
   $(".error-message h1").html(errorArray[errorNumber]);
   $(".error-message").fadeIn(500);
