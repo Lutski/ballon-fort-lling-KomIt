@@ -141,7 +141,7 @@ function makeHistoryTextFixed() {
 }
 
 
-// Shows popup if the user is on a smaller device
+// Dismisses the popup when the button is clicked
 function dismissMobilePopup() {
   $(".mobile-message-btn").click(function() {
     $('#mobile-message').css({'display':'none'});
