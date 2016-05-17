@@ -1,0 +1,46 @@
+#mobile-message
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background: #e8e8e8
+  z-index: 9999
+  position: fixed
+  display: none
+
+  .wrapper
+    position: absolute
+    min-width: 300px
+    max-width: 600px
+    text-align: center
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    h1
+      font:
+        size: 30px
+        weight: 400
+
+    p
+      line-height: 1.7
+      font:
+        size: 16px
+        weight: 200
+
+    button
+      background-color: white
+      border: none
+      width: 80px
+      margin-top: 30px
+      padding: 10px 0
+      cursor: pointer
+      outline: none
+      font:
+        size: 18px
+
+
+@media(max-width: 769px)
+  #mobile-message
+    display: block

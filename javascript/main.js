@@ -6,6 +6,7 @@ $(document).ready(function() {
   makeVideoFixed();
   togglePopup();
   makeHistoryTextFixed();
+  dismissMobilePopup();
 });
 
 // Disables scrolling when its called
@@ -136,5 +137,13 @@ function makeHistoryTextFixed() {
 
     console.log(windowScroll);
 
+  });
+}
+
+
+// Shows popup if the user is on a smaller device
+function dismissMobilePopup() {
+  $(".mobile-message-btn").click(function() {
+    $('#mobile-message').css({'display':'none'});
   });
 }
